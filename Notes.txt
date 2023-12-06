@@ -1,0 +1,68 @@
+name: admin
+admin@gmail.com
+admin
+
+
+
+If you wanna make any user admin you have to update isAdmin property true from mongoDB.
+there is no other way to become admin.
+
+
+Register with any name, if you want to become doctor, you need to fill the form ofg doctor
+if you fill the form of doctor request has been to admin, then if admin approves your profile you becomde 
+doctor and any user can see your appoinment in the appoinment tab.
+
+
+dr.Shahid
+doctor@gmail.com
+doctor
+
+
+patient
+noman
+noman@gmail.com
+noman
+
+
+Analyse and discuss the common vulnerability of the similar system. Highlight only 3 
+vulnerabilities of the system.
+
+
+For Confidentiality and Integrety
+
+1. SQL Injection:
+If user inputs are not properly validated and sanitized, an attacker might inject malicious SQL code into the authentication query. This could lead to unauthorized access or data manipulation.
+Potential Impact:
+Unauthorized access to user accounts.
+Disclosure of sensitive information.
+Manipulation or deletion of user data.
+
+Mitigation
+We use parameterized queries with mongoose and apply validation while taking any input from the user.
+
+
+2. Insecure Session Management:
+
+If the session management mechanism is not secure, attackers may exploit vulnerabilities such as session fixation or session hijacking to gain unauthorized access to user accounts.
+
+Potential Impact:
+Unauthorized access to user accounts.
+Session impersonation.
+Theft of sensitive session data.
+Mitigation: Use secure session management practices, such as generating a unique session ID, using secure session storage, and implementing session timeouts. Additionally, ensure that session data is protected against tampering.
+
+Solution
+we use JWT mechanism for authentication and authorization to mitigate the risk of session Hijacking.
+
+3. Cross-Site Scripting (XSS):
+Without proper input validation and output encoding, user-supplied data could be rendered as part of the web page, allowing attackers to inject malicious scripts. These scripts can then be executed in the context of other users' browsers.
+
+Potential Impact:
+Theft of session cookies.
+Defacement of web pages.
+Performing actions on behalf of authenticated users without their consent.
+Mitigation: Implement input validation and output encoding to prevent the execution of malicious scripts.
+using helmetJs, Implement Content Security Policy headers to restrict the sources from which various types of content can be loaded, thereby mitigating the risk of XSS
+
+
+For the High Availabilty, we use mongo DB, it is very easy in monogDB to manage distributed clusters and scale it.
