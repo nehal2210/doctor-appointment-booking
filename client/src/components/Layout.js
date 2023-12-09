@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import "../layout.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Badge } from "antd";
+import { setUser } from "../redux/userSlice";
 
 function Layout({ children }) {
   const [collapsed, setCollapsed] = useState(false);
   const { user } = useSelector((state) => state.user);
+  const dispatch = useDispatch(); 
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -99,6 +101,7 @@ function Layout({ children }) {
               className={`d-flex menu-item `}
               onClick={() => {
                 localStorage.clear();
+                dispatch(setUser(null))
                 navigate("/login");
               }}
             >
