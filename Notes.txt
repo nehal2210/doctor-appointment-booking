@@ -66,3 +66,13 @@ using helmetJs, Implement Content Security Policy headers to restrict the source
 
 
 For the High Availabilty, we use mongo DB, it is very easy in monogDB to manage distributed clusters and scale it.
+
+
+How to secure website from Hackers.
+Many hackers use input fields to inject (put) their scripts to get websites data or put their data to website database. I found the solution to save our website from this type of hacking. First I convert any input data from user to string form, whenever user try to write any script then his script convert to string and he can't do any thing in my script or SQL. Second I'm using React js framwork, whose already cover  it.
+
+Hackers can see website data by switching web pages. So, I'm using Routing Auth in react. When user have no token which provide from backend by login website, means user is not authentic so, routing Auth redirect him to login page and hacker can't switch any page.
+
+It is very common that developers not use tokens methods, so any hacker hit the api from any tools like postman and when hacker hit the api so, api getting data from backend and hacker access the full website very easily.
+
+Also, I'm using Middleware in my backend project and making some validations like, when user have no generated tokens so the api could not hit to database and return the error.
